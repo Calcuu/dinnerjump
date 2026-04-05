@@ -33,7 +33,7 @@ export type WizardData = {
 const INITIAL_DATA: WizardData = {
   title: '', description: '', type: 'closed',
   eventDate: '', startTime: '18:00', travelTimeMinutes: 30,
-  centerAddress: '', centerLat: 0, centerLng: 0, radiusKm: 5,
+  centerAddress: '', centerLat: 0, centerLng: 0, radiusKm: 2,
   invitationPolicy: 'organizer_only',
   afterpartyName: '', afterpartyAddress: '', welcomeCardEnabled: false,
 }
