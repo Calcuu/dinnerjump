@@ -29,7 +29,12 @@ export interface Database {
       }
     }
     Views: Record<string, never>
-    Functions: Record<string, never>
+    Functions: {
+      process_duo_registration: {
+        Args: { p_duo_id: string }
+        Returns: { action: string; total_paid: number; duos_needed: number }
+      }
+    }
     Enums: {
       event_type: 'open' | 'closed'
       event_status: 'draft' | 'registration_open' | 'confirmed' | 'closed' | 'active' | 'completed' | 'cancelled'
