@@ -9,8 +9,23 @@ export function StepOptions({ data, onChange }: Props) {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <label className="mb-1 block text-sm font-medium">{t('afterpartyAddress')}</label>
-        <input type="text" value={data.afterpartyAddress} onChange={(e) => onChange({ afterpartyAddress: e.target.value })} className="w-full rounded border px-3 py-2" />
+        <label className="mb-2 block text-sm font-medium">{t('afterpartyAddress')}</label>
+        <div className="flex flex-col gap-2">
+          <input
+            type="text"
+            value={data.afterpartyName}
+            onChange={(e) => onChange({ afterpartyName: e.target.value })}
+            className="w-full rounded border px-3 py-2"
+            placeholder={t('afterpartyNamePlaceholder')}
+          />
+          <input
+            type="text"
+            value={data.afterpartyAddress}
+            onChange={(e) => onChange({ afterpartyAddress: e.target.value })}
+            className="w-full rounded border px-3 py-2"
+            placeholder={t('afterpartyAddressPlaceholder')}
+          />
+        </div>
         <p className="mt-1 text-xs text-gray-400">{t('afterpartyHelp')}</p>
       </div>
       <div className="opacity-50">

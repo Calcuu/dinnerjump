@@ -14,7 +14,7 @@ export function StepDateTime({ data, onChange }: Props) {
       </div>
       <div>
         <label className="mb-1 block text-sm font-medium">{t('startTime')}</label>
-        <input type="time" value={data.startTime} onChange={(e) => onChange({ startTime: e.target.value })} className="w-full rounded border px-3 py-2" />
+        <input type="time" step={900} value={data.startTime} onChange={(e) => onChange({ startTime: e.target.value })} className="w-full rounded border px-3 py-2" />
       </div>
     </div>
   )

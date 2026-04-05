@@ -23,6 +23,7 @@ export type WizardData = {
   centerLng: number
   radiusKm: number
   invitationPolicy: 'organizer_only' | 'participants_allowed'
+  afterpartyName: string
   afterpartyAddress: string
   afterpartyLat?: number
   afterpartyLng?: number
@@ -34,7 +35,7 @@ const INITIAL_DATA: WizardData = {
   eventDate: '', startTime: '18:00', travelTimeMinutes: 30,
   centerAddress: '', centerLat: 0, centerLng: 0, radiusKm: 5,
   invitationPolicy: 'organizer_only',
-  afterpartyAddress: '', welcomeCardEnabled: false,
+  afterpartyName: '', afterpartyAddress: '', welcomeCardEnabled: false,
 }
 
 const STEPS = ['basics', 'datetime', 'location', 'policy', 'options', 'review'] as const

@@ -16,6 +16,7 @@ type CreateEventInput = {
   radiusKm: number
   type: 'open' | 'closed'
   invitationPolicy: 'organizer_only' | 'participants_allowed'
+  afterpartyName?: string
   afterpartyAddress?: string
   afterpartyLat?: number
   afterpartyLng?: number
@@ -52,7 +53,9 @@ export async function createEvent(input: CreateEventInput) {
       status: 'registration_open',
       invite_code: inviteCode,
       invitation_policy: input.invitationPolicy,
-      afterparty_address: input.afterpartyAddress || null,
+      afterparty_address: input.afterpartyName && input.afterpartyAddress
+        ? `${input.afterpartyName} — ${input.afterpartyAddress}`
+        : input.afterpartyAddress || input.afterpartyName || null,
       afterparty_lat: input.afterpartyLat || null,
       afterparty_lng: input.afterpartyLng || null,
       welcome_card_enabled: input.welcomeCardEnabled,

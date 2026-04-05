@@ -72,7 +72,7 @@ export function StepLocation({ data, onChange }: Props) {
         <div className="flex justify-between text-xs text-gray-400"><span>1 km</span><span>10 km</span></div>
       </div>
 
-      <LocationMap lat={data.centerLat} lng={data.centerLng} radiusKm={data.radiusKm} />
+      <LocationMap lat={data.centerLat} lng={data.centerLng} radiusKm={data.radiusKm} onPositionChange={(lat, lng) => onChange({ centerLat: lat, centerLng: lng })} />
 
       <div>
         <label className="mb-1 block text-sm font-medium">{t('travelTime')}</label>
@@ -84,6 +84,7 @@ export function StepLocation({ data, onChange }: Props) {
             </label>
           ))}
         </div>
+        <p className="mt-1 text-xs text-gray-400">{t('travelTimeHelp')}</p>
       </div>
     </div>
   )
